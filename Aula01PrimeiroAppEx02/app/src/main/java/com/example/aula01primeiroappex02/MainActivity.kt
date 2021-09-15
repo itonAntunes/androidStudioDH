@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tvEmail: EditText
@@ -19,33 +20,41 @@ class MainActivity : AppCompatActivity() {
         tvSenha = findViewById(R.id.tv_senha_passada)
         btnLoguin = findViewById(R.id.btn_loguin)
         btnLoguin.setOnClickListener {
-            validarCamposEmBranco()
-        }
-        btnLoguin.setOnClickListener {
-            val intent = Intent(this, SegundaActivity::class.java)
-            intent.putExtra("bundle", Bundle().apply {
-                putString("email", tvEmail.text.toString())
-                putString("senha", tvSenha.text.toString())
-            })
-            startActivity(intent)
+            if (tvEmail.text.isEmpty()) {
+                tvEmail.error = "Campo Obrigatorio"
+                Toast.makeText(this,"Tente novamente",Toast.LENGTH_SHORT).show()
+            }
+            if(tvSenha.text.isEmpty()){
+                tvSenha.error = "Campo Obrigatorio"
+                Toast.makeText(this,"Tente Novamente",Toast.LENGTH_SHORT).show()
+
+            }else {
+
+                val intent = Intent(this, SegundaActivity::class.java)
+                intent.putExtra("bundle", Bundle().apply {
+                    putString("email", tvEmail.text.toString())
+                    putString("senha", tvSenha.text.toString())
+                })
+                startActivity(intent)
+            }
         }
 
 
     }
 
-    private fun validarCamposEmBranco(): Boolean {
-        var erro = false
-
-        if (tvEmail.text.isEmpty()) {
-            tvEmail.error = "Campo Obrigatorio"
-            erro = true
-
-        }
-        if (tvSenha.text.isEmpty()) {
-            tvSenha.error = "Campo Obrigatorio"
-            erro = true
-        }
-        return erro
-    }
+//    private fun validarCamposEmBranco(): Boolean {
+//        var erro = false
+//
+//        if (tvEmail.text.isEmpty()) {
+//            tvEmail.error = "Campo Obrigatorio"
+//            erro = true
+//
+//        }
+//        if (tvSenha.text.isEmpty()) {
+//            tvSenha.error = "Campo Obrigatorio"
+//            erro = true
+//        }
+//        return erro
+//    }
 
 }

@@ -19,7 +19,7 @@ class SegundaActivity : AppCompatActivity() {
         
         val bundle = intent.getBundleExtra("bundle")
         tvEmailRecebido.text = bundle?.getString("email")
-        tvSenhaRecebido.text = bundle?.getString("senha")
+        // tvSenhaRecebido.text = bundle?.getString("senha")
 
     }
 }
