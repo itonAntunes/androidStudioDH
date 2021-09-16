@@ -7,6 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:gravity="center"
         android:textSize="20sp"
         android:text="Aplicações de Layout"
+        android:textColor="@color/pink"
         />
 
 
@@ -28,13 +30,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
+            android:textColor="@color/pink"
             android:text="Bem vindo: " />
 
         <TextView
             android:id="@+id/tv_email_recebido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="@color/pink"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_senha_recebido"
@@ -55,7 +60,8 @@
             android:layout_marginTop="250dp"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="Gostaria de altualizar o seu cadastro?"/>
+            android:textColor="@color/pink"
+            android:text="Gostaria de atualizar o seu cadastro?"/>
 
     </LinearLayout>
 
