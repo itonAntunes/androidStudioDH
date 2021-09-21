@@ -7,6 +7,7 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
+
     val nome = "Teste" + this.javaClass.name
 
     override fun onCreate(savedInstanceState: Bundle?) {

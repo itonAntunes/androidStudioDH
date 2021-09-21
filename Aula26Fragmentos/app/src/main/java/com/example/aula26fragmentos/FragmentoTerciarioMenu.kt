@@ -29,6 +29,7 @@ class FragmentoTerciarioMenu : Fragment() {
         // Inflate the layout for this fragment
         Log.i(nome,"onCreate")
         return inflater.inflate(R.layout.fragment_fragmento_terciario_menu, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,4 +70,5 @@ class FragmentoTerciarioMenu : Fragment() {
         super.onDetach()
         Log.i(nome,"onDetach")
     }
+
 }
